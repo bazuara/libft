@@ -6,11 +6,11 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:54:45 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/04 16:10:42 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/04 17:16:13 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);

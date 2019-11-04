@@ -6,11 +6,11 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 16:12:09 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/04 16:24:23 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/04 17:15:52 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(char c)
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
