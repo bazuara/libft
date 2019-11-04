@@ -6,13 +6,16 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 15:12:28 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/04 15:17:58 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/04 15:21:37 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(char *str, int n)
+void	*ft_bzero(char *str, int n)
 {
 	int i;
+	
+	if (n == 0)
+		return (0);
 
 	i = 0;
 	while (i < n)
