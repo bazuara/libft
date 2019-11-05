@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 11:25:21 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/05 16:20:35 by bazuara          ###   ########.fr       */
+/*   Created: 2019/11/05 15:50:29 by bazuara           #+#    #+#             */
+/*   Updated: 2019/11/05 17:39:48 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+int	ft_strcmp(const char *str1, const char *str2)
+{
+	int count;
 
-void	*ft_bzero(char *str, int n);
-int		ft_isalnum(int c);
-int		ft_isalpha(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
-void	*ft_memset(char *str, int c, int n);
-char	*ft_strchr(char *str, int c);
-int		ft_strlen(char *s);
-int		ft_toupper(int c);
-int		ft_toupper(int c);
-int		ft_strcmp(char *str1, char *str2);
-
-#endif
+	count = 0;
+	while (str1[count] != '\0' && str2[count] != '\0' &&
+			str1[count] == str2[count])
+		count++;
+	return ((unsigned char)str1[count] - (unsigned char)str2[count]);
+}

@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 10:45:33 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/05 13:53:52 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/05 17:37:42 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,9 @@ char	*ft_strchr(char *str, int c)
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == c)
-			return (&str[i]);
+	while (str[i] != '\0' && str[i] != c)
 		i++;
-	}
+	if (str[i] == c)
+		return (&str[i]);
 	return (0);
 }
