@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2019/11/05 11:58:04 by bazuara          ###   ########.fr        #
+#    Updated: 2019/11/05 12:40:31 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,4 +32,8 @@ $(NAME):
 clean:
 	rm -f *.o
 	rm -f *.out
+
+fclean:
 	rm -f $(LNAME)
+
+re: fclean all
