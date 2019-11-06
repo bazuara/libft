@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:25:21 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/05 16:20:35 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/06 11:23:05 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_memset(char *str, int c, int n);
 char	*ft_strchr(char *str, int c);
 int		ft_strlen(char *s);
 int		ft_toupper(int c);
-int		ft_toupper(int c);
+int		ft_tolower(int c);
 int		ft_strcmp(char *str1, char *str2);
 
 #endif
