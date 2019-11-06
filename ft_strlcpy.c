@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 10:45:33 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/06 12:48:09 by bazuara          ###   ########.fr       */
+/*   Created: 2019/11/06 13:12:51 by bazuara           #+#    #+#             */
+/*   Updated: 2019/11/06 16:21:17 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *str, int c)
+int	ft_strlcpy(char *dst, char *src, int size)
 {
-	int i;
+	int	count;
+	int	i;
 
+	count = 0;
+	while (src[count] != '\0')
+		++count;
 	i = 0;
-	while (str[i] != '\0' && str[i] != c)
-		i++;
-	if (str[i] == c)
-		return (&str[i]);
-	return (0);
+	while (src[i] != '\0' && i < (size - 1))
+	{
+		dst[i] = src[i];
+		++i;
+	}
+	dst[i] = '\0';
+	return (count);
 }
