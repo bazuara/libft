@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:25:21 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/06 17:01:28 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/06 17:44:47 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ char	*ft_strrchr(char *str, int c);
 int		ft_strncmp(const char *s1, const char *s2, int n);
 int		ft_strlcpy(char *dst, char *src, int size);
 void	*ft_memcpy(void *dst, void *src, int n);
+void	*ft_memccpy(char *dst, char *src, int c, int n);
 
 #endif
