@@ -325,7 +325,7 @@ int	ft_strncmp(const char *s1, const char *s2, int n)
 		return (0);
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-ft_strlcpy.c    1573122406  4498  4219  100644  1130      `
+ft_strlcpy.c    1573130650  4498  4219  100644  1110      `
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -334,26 +334,26 @@ ft_strlcpy.c    1573122406  4498  4219  100644  1130      `
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:12:51 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/07 11:26:46 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/07 13:44:10 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strlcpy(char *dst, char *src, int size)
 {
-	int	count;
+	int	l;
 	int	i;
 
-	count = 0;
-	while (src[count] != '\0')
-		++count;
+	l = 0;
+	while (src[l] != '\0')
+		l++;
 	i = 0;
 	while (src[i] != '\0' && i < (size - 1))
 	{
 		dst[i] = src[i];
-		++i;
+		i++;
 	}
 	dst[i] = '\0';
-	return (count);
+	return (l);
 }
 ft_memcpy.c     1573057562  4498  4219  100644  1020      `
 /* ************************************************************************** */
@@ -407,3 +407,29 @@ void	*ft_memccpy(char *dst, char *src, int c, int n)
 	}
 	return (0);
 }
+ft_memmove.c    1573132207  4498  4219  100644  1025      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/07 13:47:31 by bazuara           #+#    #+#             */
+/*   Updated: 2019/11/07 14:10:07 by bazuara          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+void	*ft_memmove(char *dst, char *src, int len)
+{
+	int i;
+
+	i = 0;
+	while (i < len)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	return (dst);
+}
+
