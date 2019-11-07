@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:25:21 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/07 15:00:00 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/07 16:35:00 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int		ft_strlcpy(char *dst, char *src, int size);
 void	*ft_memcpy(void *dst, void *src, int n);
 void	*ft_memccpy(char *dst, char *src, int c, int n);
 void	*ft_memmove(char *dst, char *src, int len);
+void	*ft_memchr(char *s, int c, int n);
 
 #endif
