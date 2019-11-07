@@ -6,37 +6,32 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:25:21 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/07 14:12:09 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/07 15:00:00 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-typedef struct	s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}				t_list;
+# include <string.h>
 
-void			*ft_bzero(char *str, int n);
-int				ft_isalnum(int c);
-int				ft_isalpha(int c);
-int				ft_isascii(int c);
-int				ft_isdigit(int c);
-int				ft_isprint(int c);
-void			*ft_memset(char *str, int c, int n);
-char			*ft_strchr(char *str, int c);
-int				ft_strlen(char *s);
-int				ft_toupper(int c);
-int				ft_tolower(int c);
-int				ft_strcmp(char *str1, char *str2);
-char			*ft_strrchr(char *str, int c);
-int				ft_strncmp(const char *s1, const char *s2, int n);
-int				ft_strlcpy(char *dst, char *src, int size);
-void			*ft_memcpy(void *dst, void *src, int n);
-void			*ft_memccpy(char *dst, char *src, int c, int n);
-void			*ft_memmove(char *dst, char *src, int len);
+void	*ft_bzero(void *str, size_t n);
+int		ft_isalnum(int c);
+int		ft_isalpha(int c);
+int		ft_isascii(int c);
+int		ft_isdigit(int c);
+int		ft_isprint(int c);
+void	*ft_memset(char *str, int c, int n);
+char	*ft_strchr(char *str, int c);
+int		ft_strlen(char *s);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_strcmp(char *str1, char *str2);
+char	*ft_strrchr(char *str, int c);
+int		ft_strncmp(const char *s1, const char *s2, int n);
+int		ft_strlcpy(char *dst, char *src, int size);
+void	*ft_memcpy(void *dst, void *src, int n);
+void	*ft_memccpy(char *dst, char *src, int c, int n);
+void	*ft_memmove(char *dst, char *src, int len);
 
 #endif
