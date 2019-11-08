@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 13:47:31 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/08 14:31:32 by bazuara          ###   ########.fr       */
+/*   Created: 2019/11/08 13:43:57 by bazuara           #+#    #+#             */
+/*   Updated: 2019/11/08 14:03:38 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
-	char	*s1;
-	char	*s2;
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-	s1 = (char *)src;
-	s2 = (char *)dst;
+	str1 = (unsigned char*)s1;
+	str2 = (unsigned char*)s2;
+	if (n < 1)
+		return (0);
 	i = 0;
-	while (i < len)
+	while (i < n)
 	{
-		s2[i] = s1[i];
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
 		i++;
 	}
-	return (dst);
+	return (0);
 }

@@ -6,24 +6,26 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:12:51 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/07 13:44:10 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/08 14:18:50 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlcpy(char *dst, char *src, int size)
-{
-	int	l;
-	int	i;
+#include "libft.h"
 
-	l = 0;
-	while (src[l] != '\0')
-		l++;
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	len;
+	size_t	i;
+
+	len = 0;
+	while (src[len] != '\0')
+		len++;
 	i = 0;
-	while (src[i] != '\0' && i < (size - 1))
+	while (src[i] != '\0' && i < (dstsize - 1))
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = '\0';
-	return (l);
+	return (len);
 }

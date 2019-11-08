@@ -6,19 +6,24 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 16:08:57 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/07 16:35:27 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/08 13:42:44 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memchr(char *s, int c, int n)
-{
-	int i;
+#include "libft.h"
 
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t	i;
+	char	*str;
+
+	str = (char*)s;
 	i = 0;
-	while (s[i] != '\0' && i < n)
+	while (i < n)
 	{
-		if (s[i] == c)
-			return (&s[i]);
+		if (str[i] == c)
+			return (&str[i]);
+		i++;
 	}
 	return (0);
 }
