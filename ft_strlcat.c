@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 13:12:51 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/08 17:10:21 by bazuara          ###   ########.fr       */
+/*   Created: 2019/11/08 15:50:44 by bazuara           #+#    #+#             */
+/*   Updated: 2019/11/08 17:03:13 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	len;
+	size_t	lens;
+	size_t	lend;
 	size_t	i;
 
-	len = 0;
-	while (src[len] != '\0')
-		len++;
+	lens = ft_strlen(src);
+	lend = ft_strlen(dst);
 	i = 0;
-	while (src[i] != '\0' && i < (dstsize - 1))
+	if (dstsize == 0)
+		return (0);
+	while (i < dstsize)
 	{
-		dst[i] = src[i];
+		dst[lend + i] = src[i];
 		i++;
 	}
-	dst[i] = '\0';
-	return (len);
+	return (lend + i);
 }
