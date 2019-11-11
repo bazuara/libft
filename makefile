@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2019/11/08 16:03:09 by bazuara          ###   ########.fr        #
+#    Updated: 2019/11/11 12:54:43 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LSOURCE = ft_bzero.c ft_isalpha.c ft_isdigit.c ft_memset.c ft_strlen.c\
 		ft_toupper.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strchr.c\
 		ft_tolower.c ft_strcmp.c ft_strrchr.c ft_strncmp.c ft_strlcpy.c\
 		ft_memcpy.c ft_memccpy.c ft_memmove.c ft_memchr.c ft_memcmp.c\
-		ft_strlcat.c
+		ft_strlcat.c ft_atoi.c
 
 CFLAGS = -Wall -Wextra -Werror
 
