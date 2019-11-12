@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:25:21 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/11 19:23:35 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/12 10:32:08 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 int		ft_strcmp(char *str1, char *str2);
 char	*ft_strrchr(char *str, int c);
-int		ft_strncmp(const char *s1, const char *s2, int n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
