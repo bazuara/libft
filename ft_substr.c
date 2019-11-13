@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:20:25 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/13 15:35:16 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/13 16:15:18 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char *new;
-	size_t i;
+	char	*new;
+	size_t	i;
 
 	i = 0;
 	if ((new = malloc((len * sizeof(char)) + 1)))

@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 13:04:20 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/13 11:40:24 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/13 16:06:05 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-
-size_t	i;
+	size_t	i;
 
 	if (!*needle)
 		return ((char *)haystack);
