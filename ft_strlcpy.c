@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 13:12:51 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/14 13:09:08 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/14 18:22:46 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 			i++;
 		}
 		dst[i] = '\0';
-	}	
+	}
 	return (ft_strlen(src));
 }

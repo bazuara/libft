@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 13:47:31 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/14 12:44:03 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/14 18:20:56 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s2 = (char *)dst;
 	if (dst > src)
 	{
-    	while (len--)
-        	s2[len] = s1[len];
+		while (len--)
+			s2[len] = s1[len];
 	}
 	else
 	{
