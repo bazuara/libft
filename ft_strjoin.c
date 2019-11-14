@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 15:35:53 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/13 16:09:45 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/14 13:01:42 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	j;
 
 	i = 0;
+	if (!s1 || !s2)
+		return (0);
 	total = ft_strlen(s1) + ft_strlen(s2);
 	if ((new = malloc(((total) * sizeof(char)) + 1)))
 	{
