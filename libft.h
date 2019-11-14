@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:25:21 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/13 16:14:36 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/14 15:46:17 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-void	*ft_memset(char *str, int c, int n);
+void	*ft_memset(char *str, int c, size_t n);
 char	*ft_strchr(char *str, int c);
 size_t	ft_strlen(const char *s);
 int		ft_toupper(int c);
@@ -40,5 +40,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strjoin(char const *s1, char const *s2);
+char 	*ft_strtrim(char const *s1, char const *set);
 
 #endif

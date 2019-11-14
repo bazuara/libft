@@ -6,13 +6,15 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:23:47 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/04 13:36:58 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/14 13:54:45 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(char *str, int c, int n)
+#include "libft.h"
+
+void	*ft_memset(char *str, int c, size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (i < n)
