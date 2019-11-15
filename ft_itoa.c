@@ -5,60 +5,57 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/15 11:16:20 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/15 14:52:10 by bazuara          ###   ########.fr       */
+/*   Created: 2019/11/15 16:54:16 by bazuara           #+#    #+#             */
+/*   Updated: 2019/11/15 17:47:08 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static  int ft_intlen(int n)
+static char	*ft_strnew(int i)
 {
-    if (n < 10)
-        return (1);
-    else
-        return (ft_intlen(n/10) + 1);
+	char	*str;
+	if (!(str = malloc(i * sizeof(char))))
+		return (0);
+	else
+		return (str);
 }
 
-char    *ft_itoa(int n)
+static	int ft_intlen(unsigned int n)
 {
-    char *s;
-    int len;
-    int neg;
+	if (n < 10)
+		return (1);
+	else
+		return (ft_intlen(n/10) + 1);
+}
 
-    neg = 0;
+char		*ft_itoa(int nbr)
+{
+	char *s;
+	int len;
+	int neg;
+	unsigned int n;
 
-    if (n < 0)
-    {
-        n = n * - 1;
-        neg = 1;
-    }
-
-    len = ft_intlen(n);
-    if (neg != 0)
-    {
-        if ((s = malloc(len * sizeof(char) + 2)))
-      {
-          s[len + 1] = '\0';
-          while (len > 0)
-          {
-             s[len] = n % 10 + '0';
-             len--;
-             n /= 10;
-          }
-      }
-      s[0] = '-';
-    }
-    else
-      if ((s = malloc(len * sizeof(char) + 1)))
-      {
-          s[len] = '\0';
-          while (len > 0)
-          {
-             s[len - 1] = n % 10 + '0';
-             len--;
-             n /= 10;
-          }
-      }
-    return (s);
+	neg = 0;
+	if (nbr < 0)
+	{
+		n = -nbr;
+		neg = 1;
+	}
+	else
+		n = nbr;
+	len = ft_intlen(n);
+	if (neg != 0)
+		len++;
+	s = ft_strnew(len + 1);
+	s[len + 1] = '\0';
+	if (neg != 0)
+		s[0] = '-';
+	while (neg < len)
+	{
+		s[len - 1] = n % 10 + '0';
+		len--;
+		n /= 10;
+	}
+	return (s);
 }
