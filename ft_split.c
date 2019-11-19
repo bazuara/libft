@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 11:41:58 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/19 16:08:05 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/19 17:18:52 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,21 +62,19 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	i = 0;
 	j = 0;
-	while (s[j] == c)
-		j++;
 	while (i < w)
 	{
 		words[i] = malloc((sizeof(char) * ft_nextwordlen(s, c, j)) + 1);
 		k = 0;
+		while (s[j] == c)
+			j++;
 		while (s[j] != c)
 		{
 			words[i][k] = s[j];
 			j++;
 			k++;
 		}
-		words[i][k] = 0;
-		while (s[j] == c)
-			j++;
+		words[i][k] = '\0';
 		i++;
 	}
 	return (words);
