@@ -6,26 +6,20 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 11:41:58 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/19 13:33:57 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/19 13:39:44 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-
-/* 
-** count words in string separated by char c 
-*/
-
-int	ft_count_words(char	const *s, char c)
+int		ft_count_words(char	const *s, char c)
 {
 	int	i;
 	int w;
 
 	i = 0;
 	w = 0;
-	if (s[i] == c && s[i +1] == '\0')
+	if (s[i] == c && s[i + 1] == '\0')
 		return (0);
 	while (s[i] != '\0')
 	{
@@ -40,7 +34,7 @@ int	ft_count_words(char	const *s, char c)
 	return (w);
 }
 
-int	ft_nextwordlen(char const *s, char c, int i)
+int		ft_nextwordlen(char const *s, char c, int i)
 {
 	int	l;
 
@@ -64,23 +58,23 @@ char	**ft_split(char const *s, char c)
 	char	**words;
 
 	w = ft_count_words(s, c);
-	words = malloc((sizeof(char *) * w ));
+	words = malloc(sizeof(char *) * w);
 	i = 0;
 	j = 0;
-	while ( i < w)
+	while (i < w)
 	{
 		words[i] = malloc((sizeof(char) * ft_nextwordlen(s, c, j)) + 1);
-	k = 0;
-	while (s[j] != c)
-	{
-		words[i][k] = s[j];
-		j++;
-		k++;
-	}
-	words[i][k] = 0;
-	while (s[j] == c)
-		j++;
-	i++;
+		k = 0;
+		while (s[j] != c)
+		{
+			words[i][k] = s[j];
+			j++;
+			k++;
+		}
+		words[i][k] = 0;
+		while (s[j] == c)
+			j++;
+		i++;
 	}
 	return (words);
 }
