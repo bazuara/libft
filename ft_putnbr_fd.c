@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 17:33:29 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/18 18:44:32 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/20 19:41:40 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n < 0)
 	{
 		c = -n;
-		write(1, "-", 1);
+		write(fd, "-", 1);
 	}
 	else
 		c = n;
@@ -30,4 +30,10 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	temp = (c % 10) + '0';
 	write(fd, &temp, 1);
+}
+
+int main(void) {
+
+  ft_putnbr_fd(-2147483648, 2);
+  return 0;
 }
