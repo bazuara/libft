@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 11:41:58 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/19 17:18:52 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/20 13:37:51 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,9 @@ char	**ft_split(char const *s, char c)
 	char	**words;
 
 	w = ft_count_words(s, c);
-	if (!(words = malloc(sizeof(char *) * w)))
+	if (!(words = malloc(sizeof(char *) * (w + 1))))
 		return (0);
+	words[w + 1] = 0;
 	i = 0;
 	j = 0;
 	while (i < w)
@@ -76,6 +77,9 @@ char	**ft_split(char const *s, char c)
 		}
 		words[i][k] = '\0';
 		i++;
+		while (s[j] == c)
+			j++;
 	}
+	words[w] = 0;
 	return (words);
 }
