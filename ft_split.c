@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 11:41:58 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/20 13:37:51 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/20 19:28:56 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,19 @@ static int		ft_count_words(char	const *s, char c)
 {
 	int	i;
 	int w;
+	int	state;
 
 	i = 0;
 	w = 0;
-	if (s[i] == c && s[i + 1] == '\0')
-		return (0);
+	state = 0;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
+			state = 0;
+		else if (state == 0)
 		{
+			state = 1;
 			w++;
-			while (s[i + 1] == c)
-				i++;
 		}
 		i++;
 	}
@@ -49,7 +50,11 @@ static int		ft_nextwordlen(char const *s, char c, int i)
 	return (l);
 }
 
-char	**ft_split(char const *s, char c)
+/*
+** esto es un comentario chulo
+*/
+
+char			**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -57,29 +62,23 @@ char	**ft_split(char const *s, char c)
 	int		k;
 	char	**words;
 
+	if (!s)
+		return (0);
 	w = ft_count_words(s, c);
 	if (!(words = malloc(sizeof(char *) * (w + 1))))
 		return (0);
-	words[w + 1] = 0;
-	i = 0;
+	words[w] = 0;
+	i = -1;
 	j = 0;
-	while (i < w)
+	while (++i < w)
 	{
 		words[i] = malloc((sizeof(char) * ft_nextwordlen(s, c, j)) + 1);
 		k = 0;
 		while (s[j] == c)
 			j++;
 		while (s[j] != c)
-		{
-			words[i][k] = s[j];
-			j++;
-			k++;
-		}
+			words[i][k++] = s[j++];
 		words[i][k] = '\0';
-		i++;
-		while (s[j] == c)
-			j++;
 	}
-	words[w] = 0;
 	return (words);
 }
