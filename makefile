@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2019/11/21 14:01:11 by bazuara          ###   ########.fr        #
+#    Updated: 2019/11/21 14:05:05 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,14 +31,15 @@ LFLAGS = -c
 all: $(NAME)
 
 $(NAME):
-	gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
-	ar rc $(LNAME) $(LSOURCE)
+	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
+	@ar rc $(LNAME) $(LSOURCE)
+	@ranlib $(LNAME)
 
 clean:
-	rm -f $(LSOURCE)
+	@rm -f $(LSOURCE)
 
 fclean:
-	rm -f $(LNAME)
+	@rm -f $(LNAME)
 
 re: fclean all
 
