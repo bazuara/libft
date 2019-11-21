@@ -6,11 +6,12 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 11:41:58 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/20 19:28:56 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/21 11:50:07 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int		ft_count_words(char	const *s, char c)
 {
@@ -40,19 +41,15 @@ static int		ft_nextwordlen(char const *s, char c, int i)
 	int	l;
 
 	l = 0;
-	while (s[i] == c)
+	while (s[i] == c && s[i] != '\0')
 		i++;
-	while (s[i] != c)
+	while (s[i] != c && s[i] != '\0')
 	{
 		i++;
 		l++;
 	}
 	return (l);
 }
-
-/*
-** esto es un comentario chulo
-*/
 
 char			**ft_split(char const *s, char c)
 {
@@ -74,9 +71,9 @@ char			**ft_split(char const *s, char c)
 	{
 		words[i] = malloc((sizeof(char) * ft_nextwordlen(s, c, j)) + 1);
 		k = 0;
-		while (s[j] == c)
+		while (s[j] == c && s[j] != '\0')
 			j++;
-		while (s[j] != c)
+		while (s[j] != c && s[j] != '\0')
 			words[i][k++] = s[j++];
 		words[i][k] = '\0';
 	}

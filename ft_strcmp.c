@@ -6,17 +6,17 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:50:29 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/05 17:39:48 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/21 13:21:33 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *str1, const char *str2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
 	int count;
 
 	count = 0;
-	while (str1[count] != '\0' && str2[count] != '\0' &&
-			str1[count] == str2[count])
+	while (s1[count] != '\0' && s2[count] != '\0' &&
+			s1[count] == s2[count])
 		count++;
-	return ((unsigned char)str1[count] - (unsigned char)str2[count]);
+	return ((unsigned char)s1[count] - (unsigned char)s2[count]);
 }
