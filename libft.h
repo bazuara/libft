@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:25:21 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/21 16:28:51 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/22 16:30:47 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ void				ft_putnbr_fd(int n, int fd);
 typedef struct		s_list
 {
 	void			*content;
-	struct slist	*next;
+	struct s_list	*next;
 }					t_list;
-t_list				ft_lstnew(void const *content);
+t_list				*ft_lstnew(void const *content);
+void	ft_lstadd_front(t_list **alst, t_list *new);
 #endif

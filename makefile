@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2019/11/21 16:54:52 by bazuara          ###   ########.fr        #
+#    Updated: 2019/11/22 13:55:22 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ LSOURCE = $(SOURCE:.c=.o)
 
 BONUSSRC = *bonus.c 
 
-LBONUSSRC = $(BONUSSRC:.c=.o)
+LBONUSSRC = *bonus.o
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -38,11 +38,16 @@ $(NAME):
 	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
 	@ar rc $(LNAME) $(LSOURCE)
 	@ranlib $(LNAME)
-	@echo "Compiled '$(NAME)' with success"${RESET}
+	@echo "Compiled '$(NAME)' successfully"${RESET}
+
+bonus: 
+	gcc $(CFLAGS) $(LFLAGS) $(BONUSSRC)
+	ar rcs $(LNAME) $(LBONUSSRC)
+	@echo "Compiled '$(NAME)' with bonus successfully"${RESET}
 
 clean:
-	@rm -f $(LSOURCE)
-	@echo "Cleaned objects with success"${RESET}
+	@rm -f $(LSOURCE) $(LBONUSSRC)
+	@echo "Cleaned objects successfully"${RESET}
 
 fclean:
 	@rm -f $(LNAME)
