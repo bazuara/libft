@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 10:53:37 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/25 11:00:35 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/25 12:40:34 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	ft_lstsize(t_list *lst)
 		lst = lst->next;
 		len++;
 	}
-	return (len);	
+	return (len);
 }
