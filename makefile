@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2019/11/22 13:55:22 by bazuara          ###   ########.fr        #
+#    Updated: 2019/11/25 13:41:03 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,11 @@ SOURCE = ft_atoi.c ft_isalpha.c ft_itoa.c ft_memcpy.c  ft_putendl_fd.c \
 
 LSOURCE = $(SOURCE:.c=.o)
 
-BONUSSRC = *bonus.c 
+BONUSSRC = ft_lstadd_back_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c\
+		   ft_lstmap_bonus.c ft_lstsize_bonus.c ft_lstadd_front_bonus.c\
+		   ft_lstdelone_bonus.c ft_lstlast_bonus.c ft_lstnew_bonus.c 
 
-LBONUSSRC = *bonus.o
+LBONUSSRC = $(BONUSSRC:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
