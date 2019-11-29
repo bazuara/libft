@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 15:56:33 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/14 18:23:33 by bazuara          ###   ########.fr       */
+/*   Updated: 2019/11/28 12:48:51 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 			len--;
 	if ((snew = (char*)malloc(sizeof(char) * (len + 1))) == NULL)
 		return (NULL);
-	snew = ft_memcpy(snew, &s1[i], len);
+	ft_memcpy(snew, &s1[i], len);
 	snew[len] = '\0';
 	return (snew);
 }
