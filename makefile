@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2020/10/16 09:14:44 by bazuara          ###   ########.fr        #
+#    Updated: 2020/10/16 10:14:41 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libft
 LNAME = libft.a
 
 SOURCE = srcs/ft_atoi.c \
+		 srcs/ft_atod.c \
 		 srcs/ft_isalpha.c \
 		 srcs/ft_itoa.c \
 		 srcs/ft_memcpy.c \
