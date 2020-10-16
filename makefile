@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2020/05/13 21:26:26 by bazuara          ###   ########.fr        #
+#    Updated: 2020/10/16 09:14:44 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ SOURCE = srcs/ft_atoi.c \
 		 srcs/ft_putchar_fd.c \
 		 srcs/ft_split.c \
 		 srcs/ft_strjoin.c \
+		 srcs/ft_strjoin_free.c \
 		 srcs/ft_strmapi.c \
 		 srcs/ft_strtrim.c \
 		 srcs/get_next_line.c
