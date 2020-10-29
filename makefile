@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2020/10/16 10:14:41 by bazuara          ###   ########.fr        #
+#    Updated: 2020/10/29 10:47:23 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,8 @@ SOURCE = srcs/ft_atoi.c \
 		 srcs/ft_strjoin_free.c \
 		 srcs/ft_strmapi.c \
 		 srcs/ft_strtrim.c \
-		 srcs/get_next_line.c
+		 srcs/get_next_line.c \
+		 srcs/ft_freearray.c
 
 LSOURCE = $(SOURCE:.c=.o)
 
