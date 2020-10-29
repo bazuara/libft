@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:25:21 by bazuara           #+#    #+#             */
-/*   Updated: 2020/10/29 09:54:07 by bazuara          ###   ########.fr       */
+/*   Updated: 2020/10/29 10:49:54 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 2
