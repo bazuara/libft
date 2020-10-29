@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2020/10/29 10:47:23 by bazuara          ###   ########.fr        #
+#    Updated: 2020/10/29 12:00:31 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,45 +14,45 @@ NAME = libft
 
 LNAME = libft.a
 
-SOURCE = srcs/ft_atoi.c \
-		 srcs/ft_atod.c \
-		 srcs/ft_isalpha.c \
-		 srcs/ft_itoa.c \
-		 srcs/ft_memcpy.c \
-		 srcs/ft_putendl_fd.c \
-		 srcs/ft_strchr.c \
-		 srcs/ft_strlcat.c \
-		 srcs/ft_strncmp.c \
-		 srcs/ft_substr.c \
+SOURCE = srcs/ft_atod.c \
+		 srcs/ft_atoi.c \
 		 srcs/ft_bzero.c \
-		 srcs/ft_isascii.c \
-		 srcs/ft_memccpy.c \
-		 srcs/ft_memmove.c \
-		 srcs/ft_putnbr_fd.c \
-		 srcs/ft_strcmp.c \
-		 srcs/ft_strlcpy.c \
-		 srcs/ft_strnstr.c \
-		 srcs/ft_tolower.c \
 		 srcs/ft_calloc.c \
-		 srcs/ft_isdigit.c \
-		 srcs/ft_memchr.c \
-		 srcs/ft_memset.c \
-		 srcs/ft_putstr_fd.c \
-		 srcs/ft_strdup.c \
-		 srcs/ft_strlen.c \
-		 srcs/ft_strrchr.c \
-		 srcs/ft_toupper.c \
+		 srcs/ft_freearray.c \
 		 srcs/ft_isalnum.c \
+		 srcs/ft_isalpha.c \
+		 srcs/ft_isascii.c \
+		 srcs/ft_isdigit.c \
 		 srcs/ft_isprint.c \
+		 srcs/ft_itoa.c \
+		 srcs/ft_memccpy.c \
+		 srcs/ft_memchr.c \
 		 srcs/ft_memcmp.c \
+		 srcs/ft_memcpy.c \
+		 srcs/ft_memmove.c \
+		 srcs/ft_memset.c \
 		 srcs/ft_putchar_fd.c \
+		 srcs/ft_putendl_fd.c \
+		 srcs/ft_putnbr_fd.c \
+		 srcs/ft_putstr_fd.c \
 		 srcs/ft_split.c \
+		 srcs/ft_strchr.c \
+		 srcs/ft_strcmp.c \
+		 srcs/ft_strdup.c \
 		 srcs/ft_strjoin.c \
 		 srcs/ft_strjoin_free.c \
+		 srcs/ft_strlcat.c \
+		 srcs/ft_strlcpy.c \
+		 srcs/ft_strlen.c \
 		 srcs/ft_strmapi.c \
+		 srcs/ft_strncmp.c \
+		 srcs/ft_strnstr.c \
+		 srcs/ft_strrchr.c \
 		 srcs/ft_strtrim.c \
-		 srcs/get_next_line.c \
-		 srcs/ft_freearray.c
+		 srcs/ft_substr.c \
+		 srcs/ft_tolower.c \
+		 srcs/ft_toupper.c \
+		 srcs/get_next_line.c
 
 LSOURCE = $(SOURCE:.c=.o)
 
