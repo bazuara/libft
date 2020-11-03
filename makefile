@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2020/10/29 12:00:31 by bazuara          ###   ########.fr        #
+#    Updated: 2020/11/03 12:31:45 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,59 +14,63 @@ NAME = libft
 
 LNAME = libft.a
 
-SOURCE = srcs/ft_atod.c \
-		 srcs/ft_atoi.c \
-		 srcs/ft_bzero.c \
-		 srcs/ft_calloc.c \
-		 srcs/ft_freearray.c \
-		 srcs/ft_isalnum.c \
-		 srcs/ft_isalpha.c \
-		 srcs/ft_isascii.c \
-		 srcs/ft_isdigit.c \
-		 srcs/ft_isprint.c \
-		 srcs/ft_itoa.c \
-		 srcs/ft_memccpy.c \
-		 srcs/ft_memchr.c \
-		 srcs/ft_memcmp.c \
-		 srcs/ft_memcpy.c \
-		 srcs/ft_memmove.c \
-		 srcs/ft_memset.c \
-		 srcs/ft_putchar_fd.c \
-		 srcs/ft_putendl_fd.c \
-		 srcs/ft_putnbr_fd.c \
-		 srcs/ft_putstr_fd.c \
-		 srcs/ft_split.c \
-		 srcs/ft_strchr.c \
-		 srcs/ft_strcmp.c \
-		 srcs/ft_strdup.c \
-		 srcs/ft_strjoin.c \
-		 srcs/ft_strjoin_free.c \
-		 srcs/ft_strlcat.c \
-		 srcs/ft_strlcpy.c \
-		 srcs/ft_strlen.c \
-		 srcs/ft_strmapi.c \
-		 srcs/ft_strncmp.c \
-		 srcs/ft_strnstr.c \
-		 srcs/ft_strrchr.c \
-		 srcs/ft_strtrim.c \
-		 srcs/ft_substr.c \
-		 srcs/ft_tolower.c \
-		 srcs/ft_toupper.c \
-		 srcs/get_next_line.c
+LIBPATH = srcs/
 
-LSOURCE = $(SOURCE:.c=.o)
+OBJ_FOLDER = obj/
 
-BONUSSRC = srcs/ft_lstadd_back_bonus.c \
-		   srcs/ft_lstclear_bonus.c \
-		   srcs/ft_lstiter_bonus.c \
-		   srcs/ft_lstmap_bonus.c \
-		   srcs/ft_lstsize_bonus.c \
-		   srcs/ft_lstadd_front_bonus.c \
-		   srcs/ft_lstdelone_bonus.c \
-		   srcs/ft_lstlast_bonus.c \
-		   srcs/ft_lstnew_bonus.c 
+FILES = \
+		ft_atod.c \
+		ft_atoi.c \
+		ft_bzero.c \
+		ft_calloc.c \
+		ft_freearray.c \
+		ft_isalnum.c \
+		ft_isalpha.c \
+		ft_isascii.c \
+		ft_isdigit.c \
+		ft_isprint.c \
+		ft_itoa.c \
+		ft_lstadd_back_bonus.c \
+		ft_lstadd_front_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstlast_bonus.c \
+		ft_lstmap_bonus.c \
+		ft_lstnew_bonus.c \
+		ft_lstsize_bonus.c \
+		ft_memccpy.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_memcpy.c \
+		ft_memmove.c \
+		ft_memset.c \
+		ft_putchar_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_putstr_fd.c \
+		ft_split.c \
+		ft_strchr.c \
+		ft_strcmp.c \
+		ft_strdup.c \
+		ft_strjoin.c \
+		ft_strjoin_free.c \
+		ft_strlcat.c \
+		ft_strlcpy.c \
+		ft_strlen.c \
+		ft_strmapi.c \
+		ft_strncmp.c \
+		ft_strnstr.c \
+		ft_strrchr.c \
+		ft_strtrim.c \
+		ft_substr.c \
+		ft_tolower.c \
+		ft_toupper.c \
+		get_next_line.c \
 
-LBONUSSRC = $(BONUSSRC:.c=.o)
+SOURCE = $(addprefix $(LIBPATH), $(FILES))
+
+OBJ_SOURCE = $(addprefix $(OBJ_FOLDER), $(notdir $(SOURCE:.c=.o)))
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -75,23 +79,19 @@ LFLAGS = -c
 all: $(NAME)
 
 $(NAME):
-	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
-	@mv *.o srcs/
-	@ar rc $(LNAME) $(LSOURCE)
-	@ranlib $(LNAME)
-	@echo "Compiled '$(NAME)' successfully"${RESET}
+	gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
+	mv *.o obj/
+	ar rc $(LNAME) $(OBJ_SOURCE)
+	ranlib $(LNAME)
+	echo "Compiled '$(NAME)' successfully"${RESET}
 
-bonus: 
-	@gcc $(CFLAGS) $(LFLAGS) $(BONUSSRC)
-	@mv *.o srcs/
-	@ar rcs $(LNAME) $(LBONUSSRC)
-	@echo "Compiled '$(NAME)' with bonus successfully"${RESET}
+bonus: $(NAME) 
 
 clean:
-	@rm -f $(LSOURCE) $(LBONUSSRC)
+	@rm -f $(OBJ_SOURCE)
 	@echo "Cleaned objects successfully"${RESET}
 
-fclean:
+fclean: clean
 	@rm -f $(LNAME)
 	@echo "Removed '$(LNAME)' with success"${RESET}
 
