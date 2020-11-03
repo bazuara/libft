@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 15:42:46 by bazuara           #+#    #+#             */
-/*   Updated: 2020/11/03 13:17:21 by bazuara          ###   ########.fr       */
+/*   Updated: 2020/11/03 13:38:15 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ const char		*ft_printpointer(const char *str, va_list args, int **count,
 				t_flags **flags);
 int				ft_isflag(char *str);
 int				max_int(int a, int b);
-char			*ft_strjoin_free(char *str1, char *str2, int i);
 int				ft_isnum(int c);
 int				ft_printf(const char *str, ...);
 
