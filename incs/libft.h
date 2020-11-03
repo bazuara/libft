@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:25:21 by bazuara           #+#    #+#             */
-/*   Updated: 2020/11/03 10:36:46 by bazuara          ###   ########.fr       */
+/*   Updated: 2020/11/03 13:26:41 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include "ft_printf.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 2
