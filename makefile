@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2020/11/03 13:35:30 by bazuara          ###   ########.fr        #
+#    Updated: 2020/11/04 09:30:17 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,11 +104,11 @@ LFLAGS = -c
 all: $(NAME)
 
 $(NAME):
-	gcc $(CFLAGS) $(LFLAGS) $(SOURCE) $(PF_SOURCE)
-	mv *.o obj/
-	ar rc $(LNAME) $(OBJ_SOURCE) $(PF_OBJ_SOURCE)
-	ranlib $(LNAME)
-	echo "Compiled '$(NAME)' successfully"${RESET}
+	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE) $(PF_SOURCE)
+	@mv *.o obj/
+	@ar rc $(LNAME) $(OBJ_SOURCE) $(PF_OBJ_SOURCE)
+	@ranlib $(LNAME)
+	@echo "Compiled '$(NAME)' successfully"${RESET}
 
 bonus: $(NAME) 
 
