@@ -6,13 +6,11 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2020/11/04 09:30:17 by bazuara          ###   ########.fr        #
+#    Updated: 2020/11/10 10:29:10 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft
-
-LNAME = libft.a
+NAME = libft.a
 
 LIBPATH = srcs/
 
@@ -106,8 +104,8 @@ all: $(NAME)
 $(NAME):
 	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE) $(PF_SOURCE)
 	@mv *.o obj/
-	@ar rc $(LNAME) $(OBJ_SOURCE) $(PF_OBJ_SOURCE)
-	@ranlib $(LNAME)
+	@ar rc $(NAME) $(OBJ_SOURCE) $(PF_OBJ_SOURCE)
+	@ranlib $(NAME)
 	@echo "Compiled '$(NAME)' successfully"${RESET}
 
 bonus: $(NAME) 
@@ -117,8 +115,8 @@ clean:
 	@echo "Cleaned objects successfully"${RESET}
 
 fclean: clean
-	@rm -f $(LNAME)
-	@echo "Removed '$(LNAME)' with success"${RESET}
+	@rm -f $(NAME)
+	@echo "Removed '$(NAME)' with success"${RESET}
 
 re: fclean all
 
