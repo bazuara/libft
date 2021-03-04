@@ -6,7 +6,7 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 09:31:05 by bazuara           #+#    #+#             */
-/*   Updated: 2020/10/29 10:51:46 by bazuara          ###   ########.fr       */
+/*   Updated: 2021/03/04 13:46:25 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	ft_freearray(char **array)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (array[i] != '\0')
