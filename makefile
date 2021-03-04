@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2020/11/10 10:29:10 by bazuara          ###   ########.fr        #
+#    Updated: 2021/03/04 12:08:29 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,17 +106,17 @@ $(NAME):
 	@mv *.o obj/
 	@ar rc $(NAME) $(OBJ_SOURCE) $(PF_OBJ_SOURCE)
 	@ranlib $(NAME)
-	@echo "Compiled '$(NAME)' successfully"${RESET}
+	@echo "Compiled '$(NAME)' successfully"
 
 bonus: $(NAME) 
 
 clean:
 	@rm -f $(OBJ_SOURCE)
-	@echo "Cleaned objects successfully"${RESET}
+	@echo "Cleaned objects successfully"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "Removed '$(NAME)' with success"${RESET}
+	@echo "Removed '$(NAME)' with success"
 
 re: fclean all
 
