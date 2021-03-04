@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 16:54:16 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/18 16:17:01 by bazuara          ###   ########.fr       */
+/*   Updated: 2021/03/04 14:23:08 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static char	*ft_strnew(int i)
 {
 	char	*str;
 
-	if (!(str = malloc(i * sizeof(char))))
+	str = malloc(i * sizeof(char));
+	if (sizeof(str) != (i * sizeof(char)))
 		return (0);
 	else
 		return (str);
@@ -30,7 +31,7 @@ static	int	ft_intlen(unsigned int n)
 		return (ft_intlen(n / 10) + 1);
 }
 
-char		*ft_itoa(int nbr)
+char	*ft_itoa(int nbr)
 {
 	char			*s;
 	int				len;
