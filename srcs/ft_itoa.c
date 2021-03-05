@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 16:54:16 by bazuara           #+#    #+#             */
-/*   Updated: 2021/03/04 14:23:08 by bazuara          ###   ########.fr       */
+/*   Updated: 2021/03/05 11:21:36 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static char	*ft_strnew(int i)
 	char	*str;
 
 	str = malloc(i * sizeof(char));
-	if (sizeof(str) != (i * sizeof(char)))
+	if (!str)
 		return (0);
 	else
 		return (str);

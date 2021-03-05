@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 13:33:24 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/25 13:41:19 by bazuara          ###   ########.fr       */
+/*   Updated: 2021/03/05 11:27:09 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	done = NULL;
 	while (lst != NULL)
 	{
-		if ((tmp = ft_lstnew((*f)(lst->content))) == NULL)
+		tmp = ft_lstnew((*f)(lst->content));
+		if (!tmp)
 		{
 			ft_lstclear(&done, del);
 			return (NULL);

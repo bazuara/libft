@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 12:01:38 by bazuara           #+#    #+#             */
-/*   Updated: 2020/02/10 13:05:31 by bazuara          ###   ########.fr       */
+/*   Updated: 2021/03/05 11:11:09 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	if (s == NULL)
-		return (i);
 	while (s[i] != '\0')
 	{
 		i++;
