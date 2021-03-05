@@ -6,7 +6,7 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 17:37:23 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/13 16:04:00 by bazuara          ###   ########.fr       */
+/*   Updated: 2021/03/05 11:40:56 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t				i;
-	const unsigned char *s1;
+	const unsigned char	*s1;
 	unsigned char		*s2;
 
 	i = 0;
