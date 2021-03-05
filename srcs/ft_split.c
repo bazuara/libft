@@ -6,17 +6,17 @@
 /*   By: bazuara <bazuara@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/19 11:41:58 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/21 11:50:07 by bazuara          ###   ########.fr       */
+/*   Updated: 2021/03/05 12:01:26 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incs/libft.h"
 #include <stdio.h>
 
-static int		ft_count_words(char	const *s, char c)
+static int	ft_count_words(char	const *s, char c)
 {
 	int	i;
-	int w;
+	int	w;
 	int	state;
 
 	i = 0;
@@ -36,7 +36,7 @@ static int		ft_count_words(char	const *s, char c)
 	return (w);
 }
 
-static int		ft_nextwordlen(char const *s, char c, int i)
+static int	ft_nextwordlen(char const *s, char c, int i)
 {
 	int	l;
 
@@ -51,7 +51,7 @@ static int		ft_nextwordlen(char const *s, char c, int i)
 	return (l);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -62,9 +62,9 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	w = ft_count_words(s, c);
-	if (!(words = malloc(sizeof(char *) * (w + 1))))
+	words = ft_calloc(sizeof(char *), (w + 1));
+	if (!words)
 		return (0);
-	words[w] = 0;
 	i = -1;
 	j = 0;
 	while (++i < w)
