@@ -6,13 +6,13 @@
 /*   By: bazuara <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 12:40:51 by bazuara           #+#    #+#             */
-/*   Updated: 2019/11/21 13:31:39 by bazuara          ###   ########.fr       */
+/*   Updated: 2021/03/08 13:04:12 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] != '\0')
