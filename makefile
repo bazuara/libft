@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2021/03/04 12:08:29 by bazuara          ###   ########.fr        #
+#    Updated: 2021/03/11 12:40:56 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,31 +69,10 @@ FILES = \
 			ft_toupper.c \
 			get_next_line.c \
 
-PF_FILES = \
-			extra_tools.c \
-			ft_checkflags.c \
-			ft_preandpos.c \
-			ft_printchar.c \
-			ft_printf.c \
-			ft_printhex.c \
-			ft_printint.c \
-			ft_printpointer.c \
-			ft_printstring.c \
-			ft_printsymbol.c \
-			ft_printuint.c \
-			ft_printword.c \
-			ft_strtoupper.c \
-			ft_uitoa.c \
-			hex_tools.c \
- 
 
 SOURCE = $(addprefix $(LIBPATH), $(FILES))
 
-PF_SOURCE = $(addprefix $(PF_PATH), $(PF_FILES))
-
 OBJ_SOURCE = $(addprefix $(OBJ_FOLDER), $(notdir $(SOURCE:.c=.o)))
-
-PF_OBJ_SOURCE = $(addprefix $(OBJ_FOLDER), $(notdir $(PF_SOURCE:.c=.o)))
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -102,9 +81,9 @@ LFLAGS = -c
 all: $(NAME)
 
 $(NAME):
-	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE) $(PF_SOURCE)
+	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
 	@mv *.o obj/
-	@ar rc $(NAME) $(OBJ_SOURCE) $(PF_OBJ_SOURCE)
+	@ar rc $(NAME) $(OBJ_SOURCE)
 	@ranlib $(NAME)
 	@echo "Compiled '$(NAME)' successfully"
 
