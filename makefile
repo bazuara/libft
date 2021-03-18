@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2021/03/11 12:40:56 by bazuara          ###   ########.fr        #
+#    Updated: 2021/03/18 12:14:15 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,8 @@ SOURCE = $(addprefix $(LIBPATH), $(FILES))
 
 OBJ_SOURCE = $(addprefix $(OBJ_FOLDER), $(notdir $(SOURCE:.c=.o)))
 
+INCLUDES = incs/
+
 CFLAGS = -Wall -Wextra -Werror
 
 LFLAGS = -c
@@ -81,7 +83,7 @@ LFLAGS = -c
 all: $(NAME)
 
 $(NAME):
-	@gcc $(CFLAGS) $(LFLAGS) $(SOURCE)
+	@gcc $(CFLAGS) $(LFLAGS) -I$(INCLUDES) $(SOURCE)
 	@mv *.o obj/
 	@ar rc $(NAME) $(OBJ_SOURCE)
 	@ranlib $(NAME)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incs/libft.h"
+#include <libft.h>
 
 /*
 ** This function fully frees an allocated bidimensional array
