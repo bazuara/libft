@@ -6,7 +6,7 @@
 #    By: bazuara <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:45:30 by bazuara           #+#    #+#              #
-#    Updated: 2021/03/18 12:14:15 by bazuara          ###   ########.fr        #
+#    Updated: 2021/07/13 13:28:31 by bazuara          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ PF_PATH = srcs/ft_printf/
 OBJ_FOLDER = obj/
 
 FILES = \
+			ft_arrlen.c \
 			ft_atod.c \
 			ft_atoi.c \
 			ft_bzero.c \
