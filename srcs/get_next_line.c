@@ -6,100 +6,86 @@
 /*   By: bazuara <bazuara@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/04 16:05:43 by bazuara           #+#    #+#             */
-/*   Updated: 2020/08/05 08:44:23 by bazuara          ###   ########.fr       */
+/*   Updated: 2021/07/13 11:58:29 by bazuara          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int		ft_newline(char *str)
+static void	ft_memdel(void **ap)
 {
-	if (!str)
-		return (0);
-	while (*str)
+	if (ap != NULL)
 	{
-		if (*str == '\n')
-			return (1);
-		str++;
+		free(*ap);
+		*ap = NULL;
 	}
-	return (0);
 }
 
-char	*ft_strnjoin(char *s1, char *s2, int read_file)
+static void	ft_strdel(char **as)
 {
-	char	*dst;
-	size_t	i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	if (!(dst = ft_calloc(sizeof(char), (ft_strlen(s1) + read_file + 1))))
-		return (NULL);
-	if (s1)
-	{
-		while (i < ft_strlen(s1))
-		{
-			dst[i] = s1[i];
-			i++;
-		}
-		free(s1);
-		s1 = NULL;
-	}
-	while (j < read_file)
-	{
-		dst[i + j] = s2[j];
-		j++;
-	}
-	dst[i + j] = '\0';
-	return (dst);
+	if (as != NULL && *as != NULL)
+		ft_memdel((void **)as);
 }
 
-int		ft_check_gnl(char **buf, char **str, int read_file, char **line)
+static int	appendline(char **s, char **line)
 {
-	int	n;
+	int		len;
+	char	*tmp;
 
-	n = 0;
-	if ((n = ft_newline(*str)) == 1 || (read_file == 0 && (*str && **str)))
+	len = 0;
+	while ((*s)[len] != '\n' && (*s)[len] != '\0')
+		len++;
+	if ((*s)[len] == '\n')
 	{
-		if (buf && *buf && n == 1)
-			free(*buf);
-		if (line && *line)
-			free(*line);
-		*line = ft_substr(*str, 0, ft_strlen(*str));
-		*str = ft_substr(*str, ft_strlen(*line) + 1, ft_strlen(*str));
-		if (n == 1)
-			return (1);
-		else
-			return (0);
+		*line = ft_substr(*s, 0, len);
+		tmp = ft_strdup(&((*s)[len + 1]));
+		free(*s);
+		*s = tmp;
+		if ((*s)[0] == '\0')
+			ft_strdel(s);
 	}
-	return (0);
+	else
+	{
+		*line = ft_strdup(*s);
+		ft_strdel(s);
+	}
+	return (1);
 }
 
-int		get_next_line(int fd, char **line)
+static int	output(char **s, char **line, int ret, int fd)
 {
-	static char	*str = NULL;
-	int			read_file;
-	char		*buf;
-
-	if (BUFFER_SIZE == 0 || fd == -1 || !line ||
-	!(buf = ft_calloc(sizeof(char), (BUFFER_SIZE + 1))))
+	if (ret < 0)
 		return (-1);
-	*line = ft_calloc(1, sizeof(char));
-	read_file = 1;
-	while (read_file > 0 || (read_file == 0 && (str && *str)))
+	else if (ret == 0 && s[fd] == NULL)
+		return (0);
+	else
+		return (appendline(&s[fd], line));
+}
+
+int	get_next_line(const int fd, char **line)
+{
+	int			ret;
+	static char	*s[4096];
+	char		buff[BUFFER_SIZE + 1];
+	char		*tmp;
+
+	if (fd < 0 || line == NULL)
+		return (-1);
+	ret = read(fd, buff, BUFFER_SIZE);
+	while (ret)
 	{
-		if (ft_check_gnl(&buf, &str, read_file, line) == 1)
-			return (1);
-		if ((read_file = read(fd, buf, BUFFER_SIZE)) == -1)
+		buff[ret] = '\0';
+		if (s[fd] == NULL)
+			s[fd] = ft_strdup(buff);
+		else
 		{
-			free(buf);
-			return (-1);
+			tmp = ft_strjoin(s[fd], buff);
+			free(s[fd]);
+			s[fd] = tmp;
 		}
-		if (read_file != 0)
-			str = ft_strnjoin(str, buf, read_file);
+		if (ft_strchr(s[fd], '\n'))
+			break ;
+		ret = read(fd, buff, BUFFER_SIZE);
 	}
-	((str)) ? free(str) : 0;
-	free(buf);
-	str = NULL;
-	return (0);
+	return (output(s, line, ret, fd));
 }
